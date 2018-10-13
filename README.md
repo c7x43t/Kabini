@@ -12,3 +12,6 @@ Based on [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Compo
  * [ ] https://aurelia.io/home
  * [ ] https://reactjs.org/docs/getting-started.html
  * [ ] https://mithril.js.org/
+ * [ ] https://semantic-ui.com/
+ * [ ] http://semantic-ui-forest.com/themes/bootswatch/darkly/#label
+ 
