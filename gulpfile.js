@@ -25,7 +25,7 @@ const babelConfig={
 const inputFile='./src/main.js';
 const paths = {
 	buildDir: './dist/',
-    scripts: ".src/**",
+    scripts: "src/**",
 }
 gulp.task('buildClean', () => {
   const dir=paths.buildDir+'kabini.js';
@@ -151,7 +151,7 @@ gulp.task('bump-major', e=>inc('major'));
 
 gulp.task('watch', function() {
   gulp.watch('src/*.js', ['buildClean','bump-prerelease']);
-  gulp.watch('src/plugins/*.js', ['buildClean','bump-prerelease']);
+  gulp.watch(/*'src/plugins/*.js'*/paths.scripts, ['buildClean','bump-prerelease']);
 });
 
 gulp.task('build-dev',['watch','buildClean','bump-prerelease']);
