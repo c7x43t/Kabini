@@ -32,12 +32,12 @@ gulp.task('buildClean', () => {
 		  bundle.modules[i].originalCode=bundle.modules[i].originalCode.replace("module.test=","")
 	  }
 	  console.log(JSON.stringify(Object.keys(bundle)));
-    return bundle.write({
+    return bundle.generate({
       file: './dist/kabini.js',
       format: 'iife',//'umd','iife'
       name: 'kabini',
       sourcemap: true
-    });
+    }).then(console.log);
   });
 })//.then();
 gulp.task('buildEs5', async () => {
