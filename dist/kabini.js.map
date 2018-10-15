@@ -1,0 +1,1 @@
+{"version":3,"file":"kabini.js","sources":["../src/plugins/sample-plugin.js"],"sourcesContent":["module.exports=class SamplePlugin{\r\n\t\r\n}"],"names":[],"mappings":";;AAAA,MAAM,CAAC,OAAO,CAAC,MAAM,YAAY;;"}
