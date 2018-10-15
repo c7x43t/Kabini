@@ -1,13 +1,3 @@
- /*import  {rollup} from 'rollup';
-import closure from 'rollup-plugin-closure-compiler-js';
- /*
-rollup({
-    entry: './src/main.js',
-    plugins: [
-        closure()
-    ]
-});
-//*/
 const gulp = require('gulp');
 	rollup = require('rollup'),
 	closure = require('rollup-plugin-closure-compiler-js'),
@@ -34,7 +24,8 @@ gulp.task('buildClean', () => {
     input: './src/main.js',
 	plugins:[
 		nodeResolve({jsnext: true}),
-		commonjs()
+		commonjs(),
+		console.log()
 	]
   }).then(bundle => {
     return bundle.write({
