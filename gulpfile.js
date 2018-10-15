@@ -29,7 +29,7 @@ gulp.task('buildClean', () => {
   }).then(bundle => {
     return bundle.write({
       file: './dist/kabini.js',
-      format: 'cjs',//'umd',
+      format: 'iife',//'umd',
       name: 'kabini',
       sourcemap: true
     });
@@ -112,6 +112,7 @@ gulp.task('bump-patch', e=>inc('patch'));
 gulp.task('bump-minor', e=>inc('minor'));
 gulp.task('bump-major', e=>inc('major'));
 
+gulp.task('build-dev',['buildClean','bump-prerelease']);
 gulp.task('build',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-prerelease']);
 gulp.task('build-patch',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-patch']);
 gulp.task('build-minor',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-minor']);
