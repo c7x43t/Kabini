@@ -36,7 +36,7 @@ gulp.task('buildClean', () => {
       file: './dist/kabini.js',
       format: 'iife',//'umd','iife'
       name: 'kabini',
-      sourcemap: true
+      sourcemap: "inline"
     }).then(console.log);
   });
 })//.then();
@@ -124,4 +124,4 @@ gulp.task('build-patch',['buildClean','buildEs5','buildMin','buildEs5Min','doc',
 gulp.task('build-minor',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-minor']);
 gulp.task('build-major',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-major']);
 
-(function a(){setTimeout(a, 5000)})();
+//(function a(){setTimeout(a, 5000)})();
