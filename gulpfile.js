@@ -59,7 +59,7 @@ gulp.task('buildClean', () => {
 		 
 		const closureCompiler = new ClosureCompiler({
 		  js: dir,
-		  compilation_level: 'ADVANCED'
+		  compilation_level: 'SIMPLE_OPTIMIZATIONS'
 		});
 		 
 		const compilerProcess = closureCompiler.run((exitCode, stdOut, stdErr) => {
