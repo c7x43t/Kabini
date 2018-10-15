@@ -1,4 +1,6 @@
 module.default=class SamplePlugin{
-	constructor(){}
+	constructor(){
+		const a=3;
+	}
 }
 

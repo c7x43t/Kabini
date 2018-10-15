@@ -150,7 +150,8 @@ gulp.task('bump-minor', e=>inc('minor'));
 gulp.task('bump-major', e=>inc('major'));
 
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['buildClean','bump-prerelease']);
+  gulp.watch('src/*.js', ['buildClean','bump-prerelease']);
+  gulp.watch('src/plugins/*.js', ['buildClean','bump-prerelease']);
 });
 
 gulp.task('build-dev',['watch','buildClean','bump-prerelease']);

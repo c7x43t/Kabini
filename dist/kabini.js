@@ -2,7 +2,8 @@
 	'use strict';
 
 	class SamplePlugin{
-		constructor(){}
+		constructor(){
+		}
 	};
 
 	class C{
