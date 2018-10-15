@@ -37,7 +37,7 @@ gulp.task('buildClean', () => {
       format: 'iife',//'umd','iife'
       name: 'kabini',
       sourcemap: "inline"
-    }).then(console.log);
+    }).then((e)=>console.log(e));
   });
 })//.then();
 gulp.task('buildEs5', async () => {
