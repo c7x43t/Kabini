@@ -8,7 +8,8 @@ const gulp = require('gulp');
 	filter = require('gulp-filter'),
 	tagVersion = require('gulp-tag-version'),
 	bump = require('gulp-bump'),
-	jsdoc = require('gulp-jsdoc3');
+	jsdoc = require('gulp-jsdoc3'),
+	fs = require('fs');
 const babelConfig={
 	babelrc: false,
 	exclude: ['node_modules/**','experimental/**'],
@@ -40,7 +41,12 @@ gulp.task('buildClean', () => {
     })
 	.then((result)=>{
 		let code=result.code.replace(/module.[\s\S]+?=/g,'');
-		console.log(code);
+		
+		fs.writeFile('./dist/kabini.js', code, function(err) {
+			if(err) {
+				return console.log(err);
+			}
+		}); 
 	});
   });
 })//.then();

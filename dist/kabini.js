@@ -1,9 +1,8 @@
 (function () {
 	'use strict';
 
-	module.default=class SamplePlugin{
+	class SamplePlugin{
 		
 	};
 
 }());
-//# sourceMappingURL=kabini.js.map
