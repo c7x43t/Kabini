@@ -60,8 +60,11 @@ gulp.task('buildClean', () => {
 		 
 		const compilerProcess = closureCompiler.run((exitCode, stdOut, stdErr) => {
 		  //compilation complete
+		  if(stdErr){
+			  return console.log(stdErr);
+		  }
 		  const dirMin=dir.slice(0,dir.length-3)+".min"+dir.slice(dir.length-3,dir.length)
-		  fs.writeFile(dirMin, code, err=>err?console.log(err):null);
+		  fs.writeFile(dirMin, stdOut, err=>err?console.log(err):null);
 		});
 	});
   });
