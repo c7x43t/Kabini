@@ -1,4 +1,4 @@
 module.default=class SamplePlugin{
-	const a;
+	const a=3;
 }
 
