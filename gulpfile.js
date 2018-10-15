@@ -38,7 +38,7 @@ gulp.task('buildClean', () => {
       name: 'kabini',
       sourcemap: true
     })
-	.then((e)=>console.log(e.write));
+	.then((e)=>console.log(e));
   });
 })//.then();
 gulp.task('buildEs5', async () => {
