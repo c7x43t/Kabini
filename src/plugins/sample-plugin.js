@@ -1,3 +1,3 @@
-module.default=class SamplePlugin{
+module.test=class SamplePlugin{
 	
 }

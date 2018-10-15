@@ -4,7 +4,7 @@
 	(factory());
 }(this, (function () { 'use strict';
 
-	module.default=class SamplePlugin{
+	module.test=class SamplePlugin{
 		
 	};
 
