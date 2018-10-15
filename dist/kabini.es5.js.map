@@ -1,1 +1,1 @@
-{"version":3,"file":"kabini.es5.js","sources":["../src/plugins/sample-plugin.js"],"sourcesContent":["module.exports=class SamplePlugin{\r\n\t\r\n}"],"names":["module","exports","SamplePlugin"],"mappings":";;AAAAA,MAAM,CAACC,OAAP,GAAe,MAAMC,YAAN,CAAkB,EAAjC"}
+{"version":3,"file":"kabini.es5.js","sources":[],"sourcesContent":[],"names":[],"mappings":";;"}
