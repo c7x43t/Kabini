@@ -1,0 +1,4 @@
+module.default=class C{
+	
+}
+
