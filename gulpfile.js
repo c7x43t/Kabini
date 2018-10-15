@@ -47,12 +47,12 @@ gulp.task('buildEs5', () => {
 		babel(babelConfig),
     ]
   }).then(bundle => {
-    return bundle.write({
+    return bundle.generate({
       file: './dist/kabini.es5.js',
       format: 'cjs',//'umd',
       name: 'kabini.es5',
       sourcemap: true
-    });
+    }).then(console.log);
   });
 });
 gulp.task('buildMin', () => {
