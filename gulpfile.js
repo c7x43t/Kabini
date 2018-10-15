@@ -14,16 +14,21 @@ const gulp = require('gulp');
 	commonjs = require('rollup-plugin-node-resolve'),
 	nodeResolve = require('rollup-plugin-node-resolve'),
 	babel = require('rollup-plugin-babel'),
+	externalHelpers = require('@babel/plugin-external-helpers'),
 	git = require('gulp-git'),
 	filter = require('gulp-filter'),
 	tagVersion = require('gulp-tag-version'),
 	bump = require('gulp-bump'),
 	jsdoc = require('gulp-jsdoc3');
 const babelConfig={
-			exclude: ['node_modules/**','experimental/**'],
-			//plugins: ['external-helpers'],
-			//externalHelpers: true
-		}
+	babelrc: false,
+	exclude: ['node_modules/**','experimental/**'],
+	presets: [ 
+		[ 'es2015', { "modules": false } ]
+	],
+	plugins: ['external-helpers'],
+	externalHelpers: true
+}
 
 gulp.task('buildClean', () => {
   return rollup.rollup({
