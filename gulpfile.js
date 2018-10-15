@@ -9,10 +9,14 @@ rollup({
 });
 //*/
 const gulp = require('gulp');
-const rollup = require('rollup');
-const closure = require('rollup-plugin-closure-compiler-js');
-const babel = require('rollup-plugin-babel');
-
+	rollup = require('rollup'),
+	closure = require('rollup-plugin-closure-compiler-js'),
+	babel = require('rollup-plugin-babel'),
+	git = require('gulp-git'),
+	filter = require('gulp-filter'),
+	tagVersion = require('gulp-tag-version'),
+	bump = require('gulp-bump'),
+	jsdoc = require('gulp-jsdoc3');
 const babelConfig={
 			exclude: ['node_modules/**','experimental/**'],
 			//plugins: ['external-helpers'],
@@ -78,16 +82,14 @@ gulp.task('buildEs5Min', () => {
   });
 });
 
-const jsdoc = require('gulp-jsdoc3');
+
 gulp.task('doc', function (cb) {
     gulp.src(['README.md', './src/**/*.js'], {read: false})
         .pipe(jsdoc(cb));
 });
 
 
-const git = require('gulp-git'),
-    filter = require('gulp-filter'),
-    tagVersion = require('gulp-tag-version');
+
 function inc(importance) {
     // get all the files to bump version in
 	// return gulp.src(['./package.json', './bower.json'])
@@ -104,24 +106,11 @@ function inc(importance) {
         .pipe(tagVersion());
 }
 // Update bower, component, npm at once:
-const bump = require('gulp-bump');
-gulp.task('bump-prerelease', e=>inc('prerelease'));
-gulp.task('bump-patch', function(){
-  gulp.src(['./package.json'])
-  .pipe(bump({type:'patch'}))
-  .pipe(gulp.dest('./'));
-});
-gulp.task('bump-minor', function(){
-  gulp.src(['./package.json'])
-  .pipe(bump({type:'minor'}))
-  .pipe(gulp.dest('./'));
-});
-gulp.task('bump-major', function(){
-  gulp.src(['./package.json'])
-  .pipe(bump({type:'major'}))
-  .pipe(gulp.dest('./'));
-});
 
+gulp.task('bump-prerelease', e=>inc('prerelease'));
+gulp.task('bump-patch', e=>inc('patch'));
+gulp.task('bump-minor', e=>inc('minor'));
+gulp.task('bump-major', e=>inc('major'));
 
 gulp.task('build',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-prerelease']);
 gulp.task('build-patch',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-patch']);
