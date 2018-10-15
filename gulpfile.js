@@ -31,8 +31,7 @@ gulp.task('buildClean', () => {
 		  bundle.modules[i].code=bundle.modules[i].code.replace("module.test=","")
 		  bundle.modules[i].originalCode=bundle.modules[i].originalCode.replace("module.test=","")
 	  }
-	  console.log(bundle)
-	  //console.log(bundle);
+	  console.log(JSON.stringify(Object.keys(bundle)));
     return bundle.write({
       file: './dist/kabini.js',
       format: 'iife',//'umd','iife'
@@ -40,7 +39,7 @@ gulp.task('buildClean', () => {
       sourcemap: true
     });
   });
-});
+})//.then();
 gulp.task('buildEs5', () => {
   return rollup.rollup({
     input: './src/main.js',
@@ -79,7 +78,6 @@ gulp.task('buildEs5Min', () => {
 		closure()
     ]
   }).then(bundle => {
-	console.log(bundle)
     return bundle.write({
       file: './dist/kabini.es5.min.js',
       format: 'cjs',//'umd',
