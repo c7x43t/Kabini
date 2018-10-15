@@ -14,7 +14,6 @@ const gulp = require('gulp');
 	commonjs = require('rollup-plugin-node-resolve'),
 	nodeResolve = require('rollup-plugin-node-resolve'),
 	babel = require('rollup-plugin-babel'),
-	externalHelpers = require('@babel/plugin-external-helpers'),
 	git = require('gulp-git'),
 	filter = require('gulp-filter'),
 	tagVersion = require('gulp-tag-version'),
