@@ -24,8 +24,7 @@ gulp.task('buildClean', () => {
     input: './src/main.js',
 	plugins:[
 		nodeResolve({jsnext: true}),
-		commonjs(),
-		console.log
+		commonjs()
 	]
   }).then(bundle => {
 	  for(let i=0;i<bundle.modules.length;i++){
