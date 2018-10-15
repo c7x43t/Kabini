@@ -11,6 +11,8 @@ rollup({
 const gulp = require('gulp');
 	rollup = require('rollup'),
 	closure = require('rollup-plugin-closure-compiler-js'),
+	commonjs = require('rollup-plugin-node-resolve'),
+	nodeResolve = require('rollup-plugin-node-resolve'),
 	babel = require('rollup-plugin-babel'),
 	git = require('gulp-git'),
 	filter = require('gulp-filter'),
@@ -26,6 +28,9 @@ const babelConfig={
 gulp.task('buildClean', () => {
   return rollup.rollup({
     input: './src/main.js',
+	plugins:[
+		commonjs()
+	]
   }).then(bundle => {
     return bundle.write({
       file: './dist/kabini.js',
