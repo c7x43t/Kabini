@@ -37,6 +37,9 @@ node_modules/
 jspm_packages/
 tools/
 
+# documentation
+docs/
+
 # TypeScript v1 declaration files
 typings/
 
