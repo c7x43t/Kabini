@@ -20,4 +20,6 @@
 		
 	};
 
+	window.SamplePlugin=SamplePlugin;
+
 }());
