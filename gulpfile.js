@@ -35,13 +35,12 @@ gulp.task('buildClean', () => {
 	  console.log(JSON.stringify(Object.keys(bundle)));
     return bundle.generate({
       file: './dist/kabini.js',
-      format: 'iife',//'umd','iife'
+      format: 'iife',
       name: 'kabini',
       sourcemap: true
     })
 	.then((result)=>{
 		let code=result.code.replace(/module.[\s\S]+?=/g,'');
-		
 		fs.writeFile('./dist/kabini.js', code, function(err) {
 			if(err) {
 				return console.log(err);
