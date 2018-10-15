@@ -49,11 +49,7 @@ gulp.task('buildClean', () => {
 	.then((result)=>{
 		// FIXED: set the correct scope by detaching from module.exports
 		let code=result.code.replace(/module.[\s\S]+?=/g,'');
-		fs.writeFile(dir, code, function(err) {
-			if(err) {
-				return console.log(err);
-			}
-		});
+		fs.writeFile(dir, code, err=>err?console.log(err):null);
 		console.log(ClosureCompiler.COMPILER_PATH); // absolute path the compiler jar
 		console.log(ClosureCompiler.CONTRIB_PATH); // absolute path the contrib folder which contains
 		 
@@ -64,8 +60,8 @@ gulp.task('buildClean', () => {
 		 
 		const compilerProcess = closureCompiler.run((exitCode, stdOut, stdErr) => {
 		  //compilation complete
-		  //str.slice(0,str.length-3)+".min"+str.slice(str.length-3,str.length)
-		  console.log(stdOut)
+		  const dirMin=dir.slice(0,dir.length-3)+".min"+dir.slice(dir.length-3,dir.length)
+		  fs.writeFile(dirMin, code, err=>err?console.log(err):null);
 		});
 	});
   });
