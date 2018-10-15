@@ -84,13 +84,28 @@ gulp.task('doc', function (cb) {
         .pipe(jsdoc(cb));
 });
 
+
+const git = require('gulp-git'),
+    filter = require('gulp-filter'),
+    tagVersion = require('gulp-tag-version');
+function inc(importance) {
+    // get all the files to bump version in
+	// return gulp.src(['./package.json', './bower.json'])
+    return gulp.src(['./package.json'])
+		// bump the version number in those files
+		.pipe(bump({type: importance}))
+        // save it back to filesystem
+        .pipe(gulp.dest('./'))
+        // commit the changed version number
+        .pipe(git.commit('bumps package version'))
+        // read only one file to get the version number
+        .pipe(filter('package.json'))
+        // **tag it in the repository**
+        .pipe(tagVersion());
+}
 // Update bower, component, npm at once:
 const bump = require('gulp-bump');
-gulp.task('bump-prerelease', function(){
-  gulp.src(['./package.json'])
-  .pipe(bump({type:'prerelease'}))
-  .pipe(gulp.dest('./'));
-});
+gulp.task('bump-prerelease', e=>inc('prerelease'));
 gulp.task('bump-patch', function(){
   gulp.src(['./package.json'])
   .pipe(bump({type:'patch'}))
@@ -106,6 +121,8 @@ gulp.task('bump-major', function(){
   .pipe(bump({type:'major'}))
   .pipe(gulp.dest('./'));
 });
+
+
 gulp.task('build',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-prerelease']);
 gulp.task('build-patch',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-patch']);
 gulp.task('build-minor',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-minor']);
