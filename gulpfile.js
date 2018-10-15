@@ -29,6 +29,7 @@ gulp.task('buildClean', () => {
   }).then(bundle => {
 	  for(let i=0;i<bundle.modules.length;i++){
 		  bundle.modules[i].code=bundle.modules[i].code.replace("module.test=","")
+		  bundle.modules[i].originalCode=bundle.modules[i].originalCode.replace("module.test=","")
 	  }
 	  console.log(bundle)
 	  //console.log(bundle);
