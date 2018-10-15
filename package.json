@@ -1,6 +1,6 @@
 {
   "name": "kabini",
-  "version": "0.1.3-7",
+  "version": "0.1.3-8",
   "description": "Kabini framework",
   "versionedSources": "package.json",
   "main": "./src/main.js",

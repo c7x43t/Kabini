@@ -29,6 +29,7 @@ gulp.task('buildClean', () => {
   return rollup.rollup({
     input: './src/main.js',
 	plugins:[
+		nodeResolve({jsnext: true}),
 		commonjs()
 	]
   }).then(bundle => {
