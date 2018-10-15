@@ -79,6 +79,7 @@ gulp.task('buildEs5Min', () => {
 		closure()
     ]
   }).then(bundle => {
+	console.log(bundle)
     return bundle.write({
       file: './dist/kabini.es5.min.js',
       format: 'cjs',//'umd',
