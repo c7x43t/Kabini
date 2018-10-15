@@ -1,2 +1,2 @@
-import './plugins/sample-plugin.js';
+import * from './plugins/sample-plugin.js';
  
