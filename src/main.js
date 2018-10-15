@@ -1,2 +1,2 @@
-import './plugins/sample-plugin.js';
+import default from'./plugins/sample-plugin.js';
  
