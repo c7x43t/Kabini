@@ -1,5 +1,5 @@
 # Kabini
-[![DeepScan grade](https://deepscan.io/api/projects/3416/branches/30590/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=3416&bid=30590)
+[![DeepScan grade](https://deepscan.io/api/projects/3416/branches/30590/badge/grade.svg?style=flat-square)](https://deepscan.io/dashboard#view=project&pid=3416&bid=30590)
 
 ![GitHub package version](https://img.shields.io/github/package-json/v/badges/shields.svg?style=flat-square)
 
