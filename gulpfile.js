@@ -9,7 +9,9 @@ const gulp = require('gulp');
 	tagVersion = require('gulp-tag-version'),
 	bump = require('gulp-bump'),
 	jsdoc = require('gulp-jsdoc3'),
-	fs = require('fs');
+	fs = require('fs'),
+	ClosureCompiler = require('google-closure-compiler').compiler;
+	
 const babelConfig={
 	babelrc: false,
 	exclude: ['node_modules/**','experimental/**'],
@@ -20,9 +22,14 @@ const babelConfig={
 	externalHelpers: true
 }
 
+const inputFile='./src/main.js';
+const buildDir='./dist/';
+
 gulp.task('buildClean', () => {
+  const dir=buildDir+'kabini.js';
+  
   return rollup.rollup({
-    input: './src/main.js',
+    input: inputFile,
 	plugins:[
 		nodeResolve({jsnext: true}),
 		commonjs()
@@ -34,24 +41,38 @@ gulp.task('buildClean', () => {
 	  }
 	  console.log(JSON.stringify(Object.keys(bundle)));
     return bundle.generate({
-      file: './dist/kabini.js',
+      file: dir,
       format: 'iife',
       name: 'kabini',
       sourcemap: true
     })
 	.then((result)=>{
+		// FIXED: set the correct scope by detaching from module.exports
 		let code=result.code.replace(/module.[\s\S]+?=/g,'');
-		fs.writeFile('./dist/kabini.js', code, function(err) {
+		fs.writeFile(dir, code, function(err) {
 			if(err) {
 				return console.log(err);
 			}
-		}); 
+		});
+		console.log(ClosureCompiler.COMPILER_PATH); // absolute path the compiler jar
+		console.log(ClosureCompiler.CONTRIB_PATH); // absolute path the contrib folder which contains
+		 
+		const closureCompiler = new ClosureCompiler({
+		  js: dir,
+		  compilation_level: 'ADVANCED'
+		});
+		 
+		const compilerProcess = closureCompiler.run((exitCode, stdOut, stdErr) => {
+		  //compilation complete
+		  //str.slice(0,str.length-3)+".min"+str.slice(str.length-3,str.length)
+		  console.log(stdOut)
+		});
 	});
   });
-})//.then();
+})
 gulp.task('buildEs5', async () => {
   return rollup.rollup({
-    input: './src/main.js',
+    input: inputFile,
     plugins: [
 		babel(babelConfig),
     ]
@@ -67,7 +88,7 @@ gulp.task('buildEs5', async () => {
 });
 gulp.task('buildMin', () => {
   return rollup.rollup({
-    input: './src/main.js',
+    input: inputFile,
     plugins: [
 		closure()
     ]
@@ -82,7 +103,7 @@ gulp.task('buildMin', () => {
 });
 gulp.task('buildEs5Min', () => {
   return rollup.rollup({
-    input: './src/main.js',
+    input: inputFile,
     plugins: [
 		babel(babelConfig),
 		closure()
