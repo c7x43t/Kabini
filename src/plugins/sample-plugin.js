@@ -1,3 +1,4 @@
-export class SamplePlugin{
+class SamplePlugin{
 	
 }
+export SamplePlugin;
