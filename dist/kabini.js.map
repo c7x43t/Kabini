@@ -1,1 +1,1 @@
-{"version":3,"file":"kabini.js","sources":["../src/plugins/sample-plugin.js"],"sourcesContent":["module.test=class SamplePlugin{\r\n\t\r\n}"],"names":[],"mappings":";;;CAAA,MAAM,CAAC,IAAI,CAAC,MAAM,YAAY;CAC9B;CACA;;;;"}
+{"version":3,"file":"kabini.js","sources":[],"sourcesContent":[],"names":[],"mappings":";;;;;"}

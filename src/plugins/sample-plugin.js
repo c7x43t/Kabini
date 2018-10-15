@@ -1,3 +1,3 @@
-module.test=class SamplePlugin{
+export class SamplePlugin{
 	
 }
