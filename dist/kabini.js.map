@@ -1,1 +1,1 @@
-{"version":3,"file":"kabini.js","sources":["../src/plugins/sample-plugin.js"],"sourcesContent":["module.export=class SamplePlugin{\r\n\t\r\n}\r\n\r\n"],"names":[],"mappings":";;;CAAA,MAAM,CAAC,MAAM,CAAC,MAAM,YAAY;CAChC;CACA,CAAC;;;;"}
+{"version":3,"file":"kabini.js","sources":["../src/plugins/sample-plugin.js"],"sourcesContent":["module.default=class SamplePlugin{\r\n\t\r\n}\r\n\r\n"],"names":[],"mappings":";;;CAAA,MAAM,CAAC,OAAO,CAAC,MAAM,YAAY;CACjC;CACA,CAAC;;;;"}

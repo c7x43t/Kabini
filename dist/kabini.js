@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	module.export=class SamplePlugin{
+	module.default=class SamplePlugin{
 		
 	};
 
