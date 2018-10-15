@@ -25,7 +25,7 @@ gulp.task('buildClean', () => {
 	plugins:[
 		nodeResolve({jsnext: true}),
 		commonjs(),
-		console.log()
+		console.log
 	]
   }).then(bundle => {
     return bundle.write({
