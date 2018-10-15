@@ -3,7 +3,7 @@
 
 	class SamplePlugin{
 		constructor(){
-			const a=5;
+			const a=2;
 			this.a=a;
 		}
 	};
