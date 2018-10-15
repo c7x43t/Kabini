@@ -40,19 +40,20 @@ gulp.task('buildClean', () => {
     });
   });
 })//.then();
-gulp.task('buildEs5', () => {
+gulp.task('buildEs5', async () => {
   return rollup.rollup({
     input: './src/main.js',
     plugins: [
 		babel(babelConfig),
     ]
-  }).then(bundle => {
-    return bundle.generate({
+  }).then(async bundle => {
+    const { code, map }  = await bundle.generate({
       file: './dist/kabini.es5.js',
       format: 'cjs',//'umd',
       name: 'kabini.es5',
       sourcemap: true
-    }).then(console.log);
+    });
+	console.log(code)
   });
 });
 gulp.task('buildMin', () => {
