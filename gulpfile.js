@@ -28,6 +28,7 @@ gulp.task('buildClean', () => {
 		console.log
 	]
   }).then(bundle => {
+	  console.log(bundle);
     return bundle.write({
       file: './dist/kabini.js',
       format: 'iife',//'umd','iife'
