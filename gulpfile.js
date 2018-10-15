@@ -23,10 +23,12 @@ const babelConfig={
 }
 
 const inputFile='./src/main.js';
-const buildDir='./dist/';
-
+const paths = {
+	buildDir: './dist/',
+    scripts: ".src/**",
+}
 gulp.task('buildClean', () => {
-  const dir=buildDir+'kabini.js';
+  const dir=paths.buildDir+'kabini.js';
   
   return rollup.rollup({
     input: inputFile,
@@ -147,7 +149,11 @@ gulp.task('bump-patch', e=>inc('patch'));
 gulp.task('bump-minor', e=>inc('minor'));
 gulp.task('bump-major', e=>inc('major'));
 
-gulp.task('build-dev',['buildClean','bump-prerelease']);
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['buildClean','bump-prerelease']);
+});
+
+gulp.task('build-dev',['watch','buildClean','bump-prerelease']);
 gulp.task('build',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-prerelease']);
 gulp.task('build-patch',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-patch']);
 gulp.task('build-minor',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-minor']);
