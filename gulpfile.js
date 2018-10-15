@@ -123,3 +123,5 @@ gulp.task('build',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-
 gulp.task('build-patch',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-patch']);
 gulp.task('build-minor',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-minor']);
 gulp.task('build-major',['buildClean','buildEs5','buildMin','buildEs5Min','doc','bump-major']);
+
+(function a(){setTimeout(a, 5000)})();
