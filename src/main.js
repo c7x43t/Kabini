@@ -1,2 +1,2 @@
-import {test} from'./plugins/sample-plugin.js';
+require('./plugins/sample-plugin.js');
  
