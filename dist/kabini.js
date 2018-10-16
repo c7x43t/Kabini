@@ -38,6 +38,13 @@
 		} 
 	};
 
+	class toDo extends Kabini{
+		constructor(){
+			
+		}
+	};
+	//
+
 	window.Kabini=Kabini;
 
 }());
