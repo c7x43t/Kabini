@@ -22,7 +22,7 @@
 
 	class ToDo extends Kabini{
 		constructor(){
-			
+			super();
 		}
 		
 	};
