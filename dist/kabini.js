@@ -12,7 +12,7 @@
 			}
 			//
 			if(this.template){
-				customElements.define(this.tagName.toLowerCase(), this.template);
+				customElements.define(this.tagName.toLowerCase(), this);
 			}
 		}
 		connectedCallback(){
