@@ -19,7 +19,7 @@
 			}
 		}
 		connectedCallback(){
-			
+			this.appendChild(this.clone);
 		}
 		disconnectedCallback(){
 			
