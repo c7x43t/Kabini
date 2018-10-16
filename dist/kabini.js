@@ -38,4 +38,6 @@
 		} 
 	};
 
+	window.Kabini=Kaibini;
+
 }());
