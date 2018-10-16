@@ -5,6 +5,7 @@
 		constructor(){
 			// Must call super constructor in derived class before accessing 'this' or returning from derived constructor
 			super();
+			// autoload template
 			if(!this.hasOwnProperty("template")){
 				let template=document.querySelector("template#"+tagToCamelCase(this.tagName));
 				this.template=template;
