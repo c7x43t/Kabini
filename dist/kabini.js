@@ -20,6 +20,22 @@
 		
 	};
 
-	window.SamplePlugin=SamplePlugin;
+	class Kabini extends HTMLElement{
+		constructor(){
+			
+		}
+		connectedCallback(){
+			
+		}
+		disconnectedCallback(){
+			
+		}
+		adaptedCallback(){
+			
+		}
+		attributeChangedCallback(){
+			
+		} 
+	};
 
 }());
