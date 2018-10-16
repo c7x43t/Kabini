@@ -31,7 +31,7 @@
 	};	
 	function tagToCamelCase(str){
 		return str.toLowerCase()
-		.split("-")
+		.split(/[ -_]+/)
 		// turn the first letter to uppercase starting at the second segment
 		.map((e,i)=>i>0?e[0].toUpperCase()+e.slice(1,e.length):e)
 		.join("");

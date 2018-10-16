@@ -21,13 +21,15 @@ test
 <li>1</li>
 <li>2</li>
 </ul>
-<template id="toDo">
-	<input value=3></input>
-	<button>add</button>
+<template id="toDo" keys={keys}>
+	<input :value="input" value=3></input>
+	<button @click="additem">add</button>
 	<ul>
-		<li>1</li>
-		<li>2</li>
+		<!-- keys beeing element.data.keys of type array -->
+		<li ::for="key in keys">{key}</li>
 	</ul>
+	<script implements>
+	</script>
 </template>
 <to-do></to-do>
 </body>
