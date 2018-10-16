@@ -40,6 +40,7 @@
 	};
 	customElements.define('to-do', ToDo);//, { extends: "ul" });
 
+	// sometimes i feel like compiler is ignoring my comments
 	window.Kabini=Kabini;
 
 }());
