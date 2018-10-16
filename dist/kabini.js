@@ -12,6 +12,7 @@
 			}
 			//
 			if(this.template){
+				console.log(this,this.constructor);
 				customElements.define(this.tagName.toLowerCase(), this);
 			}
 		}
