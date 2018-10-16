@@ -12,6 +12,7 @@
 			}
 			//
 			if(this.template){
+				console.log("this is never called");
 				customElements.define(this.tagName.toLowerCase(), this.constructor);
 			}
 		}
