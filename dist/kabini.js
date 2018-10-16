@@ -19,12 +19,13 @@
 		} 
 	};
 
-	class toDo extends Kabini{
+	class ToDo extends Kabini{
 		constructor(){
 			
 		}
+		
 	};
-	//
+	customElements.define('to-do', ToDo);//, { extends: "ul" });
 
 	window.Kabini=Kabini;
 
