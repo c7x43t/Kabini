@@ -13,7 +13,9 @@
 			//
 			if(this.template){
 				console.log("this is never called");
-				customElements.define(this.tagName.toLowerCase(), this.constructor);
+				this.clone=template.content.cloneNode(true);
+				this.appendChild(this.clone);
+				//customElements.define(this.tagName.toLowerCase(), this.constructor);
 			}
 		}
 		connectedCallback(){
