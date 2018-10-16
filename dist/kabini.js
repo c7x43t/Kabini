@@ -5,6 +5,7 @@
 		constructor(){
 			// Must call super constructor in derived class before accessing 'this' or returning from derived constructor
 			super();
+			console.log(this);
 		}
 		connectedCallback(){
 			
