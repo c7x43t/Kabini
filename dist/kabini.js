@@ -4,6 +4,7 @@
 	class Kabini extends HTMLElement{
 		constructor(){
 			// Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+			super();
 		}
 		connectedCallback(){
 			
