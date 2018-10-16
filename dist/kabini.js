@@ -14,7 +14,7 @@
 			if(this.template){
 				console.log("this is never called");
 				this.clone=this.template.content.cloneNode(true);
-				this.appendChild(this.clone);
+				//this.appendChild(this.clone)
 				//customElements.define(this.tagName.toLowerCase(), this.constructor);
 			}
 		}
