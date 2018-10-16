@@ -27,7 +27,7 @@
 	        result+=index===0?str[index]:str[index].toUpperCase()+str.slice(index+1,position);
 	        index=position+1;
 	    }    result+=(index+1<=str.length?str[index].toUpperCase():"")+str.slice(index+1,str.length);
-	return result;
+		return result;
 	};
 
 	class ToDo extends Kabini{
