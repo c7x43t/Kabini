@@ -21,4 +21,4 @@ class Kabini extends HTMLElement{
 }	
 
 
-window.SamplePlugin=SamplePlugin;
+window.Kabini=Kabini;
