@@ -1,6 +1,6 @@
 module.default=class SamplePlugin{
 	constructor(){
-		const a=3;
+		const a=2;
 		this.a=a;
 	}
 }
