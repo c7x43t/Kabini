@@ -5,7 +5,6 @@
 		constructor(){
 			// Must call super constructor in derived class before accessing 'this' or returning from derived constructor
 			super();
-			console.log(this.template);
 		}
 		connectedCallback(){
 			
@@ -19,6 +18,16 @@
 		attributeChangedCallback(){
 			
 		} 
+	};	
+	function tagToCamelCase(str){
+		let index=0,result="";
+		var reg=/-+/g,match;
+		while(match=reg.exec(str)){
+			position=match.index;
+	        result+=index===0?str[index]:str[index].toUpperCase()+str.slice(index+1,position);
+	        index=position+1;
+	    }    result+=(index+1<=str.length?str[index].toUpperCase():"")+str.slice(index+1,str.length);
+	return result;
 	};
 
 	class ToDo extends Kabini{
