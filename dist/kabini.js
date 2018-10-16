@@ -10,6 +10,10 @@
 				let template=document.querySelector("template#"+tagToCamelCase(this.tagName));
 				this.template=template;
 			}
+			//
+			if(this.template){
+				customElements.define(this.tagName.toLowerCase(), this.template);
+			}
 		}
 		connectedCallback(){
 			
