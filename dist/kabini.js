@@ -7,7 +7,7 @@
 			super();
 			if(!this.hasOwnProperty("template")){
 				console.log(this.tagName);
-				let template=document.querySelector("tempalte#"+tagToCamelCase(this.tagName));
+				let template=document.querySelector("template#"+tagToCamelCase(this.tagName));
 				console.log(template); 
 			}
 		}
